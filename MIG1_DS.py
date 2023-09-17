@@ -12,6 +12,7 @@ plt.plot([19, 19],[0, 20])
 
 #tests commit
 #test 2 good job
+#test 3 very bad
 
 plt.plot([0,35.25],[28.2, 0])
 X = [0, 34/3]
