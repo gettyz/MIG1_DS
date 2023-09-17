@@ -9,7 +9,7 @@ plt.scatter(19, 13, c= 'orange')
 plt.scatter(14, 17, c= 'blue')
 plt.plot([0,20],[17, 17])
 plt.plot([19, 19],[0, 20])
-
+#пытаюсь создать побную веьку
 #tests commit
 #test 2 good job
 #test 3 very bad
