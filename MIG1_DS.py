@@ -15,7 +15,7 @@ plt.plot([19, 19],[0, 20])
 #test 3 very bad
 #test on branch good
 #i love eating
-#ничего не пойму
+
 
 
 plt.plot([0,35.25],[28.2, 0])
