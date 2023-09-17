@@ -10,7 +10,7 @@ plt.scatter(14, 17, c= 'blue')
 plt.plot([0,20],[17, 17])
 plt.plot([19, 19],[0, 20])
 
-
+#tests commit
 
 plt.plot([0,35.25],[28.2, 0])
 X = [0, 34/3]
