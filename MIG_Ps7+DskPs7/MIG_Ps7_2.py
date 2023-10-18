@@ -41,7 +41,7 @@ def max_sub_array(nums):
 source_array = [2, -5, 2, 2, -1, 3, -1, 2, -5, 4]
 # Вызываем функцию и выводим результат.
 # Вывод: [2, 2, -1, 3, -1, 2]
-print(max_sub_array(source_array))
+print('подмассив с максимальной суммой', max_sub_array(source_array))
 
 # Importing the matplotlib library for plotting
 import matplotlib.pyplot as plt
