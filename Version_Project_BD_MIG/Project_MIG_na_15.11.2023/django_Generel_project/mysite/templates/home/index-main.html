@@ -1,0 +1,413 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Рабочий стол {% endblock %}
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} {% endblock body_class %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+    <!-- Google Font: Source Sans Pro -->
+    {#  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">#}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    {#  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">#}
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Рабочий стол</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                            <li class="breadcrumb-item active">Рабочий стол</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <h5 class="mb-2">Меню быстрого доступа</h5>
+                <div class="row">
+                    {% comment %}
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info"><i class="fa fa-cogs"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ввод изделия в эксплуатацию</span>
+                                <span class="info-box-number">1,410</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                {% endcomment %}
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Каталогизирование</span>
+                                <span class="info-box-number">
+                    <a href="/ui-bp-timeline.html"
+                       class="nav-link {% if 'ui-bp-timeline' in segment %} active {% endif %}">
+                          Маршрутная карта
+                    </a>
+                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Формирование классификаторов</span>
+                                <span class="info-box-number">13,648</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    {% comment %}
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-danger"><i class="fa fa-industry"
+                                                                     aria-hidden="true"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Разработка стенда</span>
+                                <span class="info-box-number">93,139</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    {% endcomment %}
+                </div>
+                <!-- /.row -->
+
+                <!-- =========================================================== -->
+
+
+                <!-- Small Box (Stat card) -->
+                <h5 class="mb-2 mt-4">Перейти к АРМ:</h5>
+                {% comment %}
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>АРМ ЭДИ К</h3>
+
+                                <p>ЭДИ Конструктора</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <a href="/edikon/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>АРМ ЭДИ Э</h3>
+
+                                <p>ЭДИ Эксплуатации</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <a href="/edieks/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>АРМ ЭДИ Т</h3>
+
+                                <p>ЭДИ Технолога</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <a href="/editeh/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>АРМ ЭДИ П</h3>
+
+                                <p>ЭДИ Производства</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <a href="/edipro/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+
+                    {% endcomment %}
+                <!-- Small Box (Stat card) -->
+                <div class="row">
+                    {% comment %}
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-orange">
+
+                            <div class="inner">
+                                <h3>АРМ ЭКБ</h3>
+
+                                <p>АРМ Управление ЭКБ</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-podcast "></i>
+                            </div>
+                            <a href="/armekb/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                                        {% endcomment %}
+                    <!-- ./col -->
+                    <div class="col-lg-4 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-success">
+                            <!-- Loading (remove the following to stop the loading)-->
+                            {% comment %}
+                            <div class="overlay dark">
+                                <i class="fas fa-3x fa-exclamation-circle"></i>
+                            </div>
+                            {% endcomment %}
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3> Электронный каталог</h3>
+
+                                <p>Тип изделия, модификации, каталоги</p>
+                            </div>
+                                                        <div class="icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="{{ CORE_DIR }}/hdbook/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-warning">
+                            <!-- Loading (remove the following to stop the loading)-->
+
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3>Справочники</h3>
+                                <p>Справочники и классификаторы</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="/handbook/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    {% comment %}
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-warning">
+                            <!-- Loading (remove the following to stop the loading)-->
+
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3>АРМ ЭДИ Экз</h3>
+
+                                <p>ЭДИ Экземпляра</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="/handbook/" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+{% endcomment %}
+                </div>
+                <!-- /.row -->
+                {% comment %}
+                <!-- Small Box (Stat card) -->
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-gray-light">
+                            <!-- Loading (remove the following to stop the loading)-->
+                            <div class="overlay dark">
+                                <i class="fas fa-3x fa-exclamation-circle"></i>
+                            </div>
+                            <!-- end loading -->
+                            <div class="inner">
+
+                                <h3>АРМ Т</h3>
+
+                                <p>Технолог</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-gray-light">
+                            <!-- Loading (remove the following to stop the loading)-->
+                            <div class="overlay dark">
+                                <i class="fas fa-3x fa-exclamation-circle"></i>
+                            </div>
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3>АРМ Цех</h3>
+
+                                <p>Цех</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-gamepad"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-gray-light">
+                            <!-- Loading (remove the following to stop the loading)-->
+                            <div class="overlay dark">
+                                <i class="fas fa-3x fa-exclamation-circle"></i>
+                            </div>
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3>АРМ СП</h3>
+
+                                <p>Сопровождение производства</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small card -->
+                        <div class="small-box bg-gray-light">
+                            <!-- Loading (remove the following to stop the loading)-->
+                            <div class="overlay dark">
+                                <i class="fas fa-3x fa-exclamation-circle"></i>
+                            </div>
+                            <!-- end loading -->
+                            <div class="inner">
+                                <h3>АРМ ИЭТР</h3>
+
+                                <p>Создание ИЭТР</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">
+                                Перейти <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+                <!-- =========================================================== -->
+{% endcomment %}
+
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
+        <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- /.content-wrapper -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- jQuery -->
+    <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/static/assets/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/static/assets/js/demo.js"></script>
+
+{% endblock javascripts %}

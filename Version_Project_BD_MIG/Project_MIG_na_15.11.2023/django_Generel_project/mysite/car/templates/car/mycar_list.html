@@ -1,0 +1,83 @@
+{% extends "car/base.html" %}
+
+{#{% block page_heading %}{% endblock %}#}
+{% block title %}{{ sometry }} {% endblock %}
+
+{% block content %}
+
+{% load car_tags %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+    <!-- Content Header (Page header) -->
+    {% block sidebar %}
+    {% include 'car/includes/_breadcrumb.html' %}
+    {% endblock %}
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <button class="btn bg-success btn-sm">
+            <a href="{% url 'car:MyCarCreate' %}" class=''>
+                Добавить новый
+            </a>
+        </button>
+        <br><br>
+
+        <div class="container-fluid row">
+            <div class="col-md-12">
+                <table class="table table-striped table-bordered ">
+                    <tr>
+                        <th class="w-10">{{ col1name }}</th>
+                        <th class="w-25">{{ col2name }}</th>
+                        <th class="w-25">{{ col3name }}</th>
+                        <th colspan="3">Сервисы</th>
+
+                    </tr>
+
+                    {% for item in mycar_list %}
+                    <tr>
+                        <td>
+                            <h5 class="card-title">
+                                {{ item.name }}
+                            </h5>
+                        </td>
+                        <td>
+                            <h5 class="card-title">
+                                {{ item.color }}
+                            </h5>
+                        </td>
+                        <td>
+                            <h5 class="card-title">
+                                {{ item.nomb }}
+                            </h5>
+                        </td>
+                        <td>
+                            <button class="btn bg-primary  btn-sm">
+                                <a href="{% url 'car:MyCarUpdate' item.pk %}">Редактировать</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn bg-primary  btn-sm">
+                                <a href="{% url 'car:MyCarDetail' item.pk %}">Подробнее</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn bg-danger  btn-sm" >
+                                <a href="{% url 'car:MyCarDelete' item.pk %}">Удалить</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
