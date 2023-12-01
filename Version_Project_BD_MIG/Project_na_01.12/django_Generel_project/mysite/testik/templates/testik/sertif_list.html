@@ -1,0 +1,67 @@
+{% extends "testik/base.html" %}
+
+{#{% block page_heading %}{% endblock %}#}
+{% block title %}{{ sometry }} {% endblock %}
+
+{% block content %}
+
+{% load testik_tags %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+    <!-- Content Header (Page header) -->
+    {% block sidebar %}
+    {% include 'testik/includes/_breadcrumb.html' %}
+    {% endblock %}
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <button class="btn bg-success btn-sm">
+            <a href="{% url 'testik:SertifCreate' %}" class=''>
+                Добавить новый
+            </a>
+        </button>
+        <br><br>
+
+        <div class="container-fluid row">
+            <div class="col-md-12">
+                <table class="table table-striped table-bordered ">
+                    <tr>
+                        <th class="w-25">{{col1name}}</th> <th class="w-25">{{col2name}}</th> <th class="w-25">{{col3name}}</th> <th class="w-25">{{col4name}}</th> <th class="w-25">{{col5name}}</th> <th class="w-25">{{col6name}}</th>
+                        <th colspan="3">Сервисы</th>
+
+                    </tr>
+
+                    {% for item in sertif_list %}
+                    <tr>
+                         <td><h5 class="card-title">{{ item.sertif }}</h5></td>  <td><h5 class="card-title">{{ item.polzovatel }}</h5></td>  <td><h5 class="card-title">{{ item.osnnavik }}</h5></td>  <td><h5 class="card-title">{{ item.vsenavik }}</h5></td>  <td><h5 class="card-title">{{ item.data }}</h5></td>  <td><h5 class="card-title">{{ item.itog }}</h5></td>
+                        <td>
+                            <button class="btn bg-primary  btn-sm">
+                                <a href="{% url 'testik:SertifUpdate' item.pk %}">Редактировать</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn bg-primary  btn-sm">
+                                <a href="{% url 'testik:SertifDetail' item.pk %}">Подробнее</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn bg-danger  btn-sm" >
+                                <a href="{% url 'testik:SertifDelete' item.pk %}">Удалить</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'anketa/base.html' %}
+{% load anketa_tags %}
+{% block content %}
+
+    <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+    {% block sidebar %}
+    {% include 'anketa/includes/_breadcrumb.html' %}
+    {% endblock %}
+
+    <section class="content">
+
+    <h2>Удаление</h2>
+    <p>Вы точно хотите удалить?</p>
+    <form method="post">
+        {% csrf_token %}
+        <p class="text-danger text-bold"> Удаляется обьект:  "{{ object }}"</p>
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a href="{% url 'anketa:Sertifikat' %}" class="btn btn-default">Выйти</a>
+    </form>
+    </section>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'testik/base.html' %}
+{% load testik_tags %}
+{% block content %}
+
+
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        {% block sidebar %}
+            {% include 'testik/includes/_breadcrumb.html' %}
+        {% endblock %}
+
+        <!-- Main content -->
+        <section class="content">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Основные сведения</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        {% if field.name in slovar %}
+                                            {{ field.label_tag }}
+                                            {{ field | addclassrow:"form-control " }}
+                                            {{ field.errors }}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">Дополнительные сведения</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        {% if field.name in secslovar %}
+                                            {{ field.label_tag }}
+                                            {{ field | addclassrow:"form-control " }}
+                                            {{ field.errors }}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-info collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Дополнительная информация</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            title="Collapse">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        {% if field.name in dopslovar %}
+                                            {{ field.label_tag }}
+                                            {{ field | addclassrow:"form-control " }}
+                                            {{ field.errors }}
+                                        {% endif %}
+
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{% url 'testik:Sertif' %}" class="btn btn-secondary float-right">
+                            {% my_notsave %}</a>
+                        <input type="submit" value="{% my_save %}" class="btn btn-success ">
+                    </div>
+                </div>
+                <!-- /.row -->
+            </form>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock content %}

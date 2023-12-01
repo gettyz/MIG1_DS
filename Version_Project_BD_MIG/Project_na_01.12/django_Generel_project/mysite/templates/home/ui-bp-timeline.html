@@ -1,0 +1,385 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI General {% endblock %}
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} {% endblock body_class %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- Google Font: Source Sans Pro -->
+{#  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">#}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
+
+  <style>
+    .color-palette {
+      height: 35px;
+      line-height: 35px;
+      text-align: right;
+      padding-right: .75rem;
+    }
+
+    .color-palette.disabled {
+      text-align: center;
+      padding-right: 0;
+      display: block;
+    }
+
+    .color-palette-set {
+      margin-bottom: 15px;
+    }
+
+    .color-palette span {
+      display: none;
+      font-size: 12px;
+    }
+
+    .color-palette:hover span {
+      display: block;
+    }
+
+    .color-palette.disabled span {
+      display: block;
+      text-align: left;
+      padding-left: .75rem;
+    }
+
+    .color-palette-box h4 {
+      position: absolute;
+      left: 1.25rem;
+      margin-top: .75rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      display: block;
+      z-index: 7;
+    }
+  </style>
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Маршрутная карта бизнес-процесса "Устранение отказа"</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">МК БП Устранение отказа</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+        <h5 class="mt-4 mb-2">Маршрутная карта - Устранение отказа</h5>
+
+              <!-- Timelime example  -->
+        <div class="row">
+          <div class="col-md-12">
+                <div class="card">
+            <!-- The time line -->
+            <div class="timeline">
+              <!-- timeline time label -->
+              <div class="time-label">
+                <span class="bg-red">Этап 1 - Обработка входящей корреспонденции</span>
+              </div>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-envelope bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                  <h3 class="timeline-header"><a href="#">Уведомление о вызове представителя поставщика</a> </h3>
+
+                  <div class="timeline-body">
+                    Оцифровка Уведомления о вызове представителя поставщика
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">Рекламационный акт</a> </h3>
+                  <div class="timeline-body">
+                    Внесение первичных сведений в рекламационный акт или его оцифровка
+                  </div>
+                  <div class="timeline-footer">
+                   <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <!-- timeline time label -->
+              <div class="time-label">
+                <span class="bg-green">Этап 2 -  Определение действий по устранению отказа</span>
+              </div>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <div>
+                <i class="fa fa-camera bg-purple"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 2 days ago</span>
+                  <h3 class="timeline-header"><a href="#">Служебная записка</a> </h3>
+                  <div class="timeline-body">
+                    Служебная записка о формировании списка представителей поставщика???
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-video bg-maroon"></i>
+
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 5 days ago</span>
+
+                  <h3 class="timeline-header"><a href="#">Акт технической экспертизы</a></h3>
+
+                  <div class="timeline-body">
+
+                  </div>
+                  <div class="timeline-footer">
+                    <a href="#" class="btn btn-sm bg-maroon">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <div>
+                <i class="fas fa-clock bg-gray"></i>
+              </div>
+            </div>
+                    </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- END CUSTOM TABS -->
+        <!-- START PROGRESS BARS -->
+        <h5 class="mt-4 mb-2">Выбор дальнейшего маршрута (один из двух на выбор)</h5>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">3.1. Устранение отказа на месте</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+
+        <!-- Timelime example  -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- The time line -->
+            <div class="timeline">
+              <!-- timeline time label -->
+              <div class="time-label">
+                <span class="bg-red">Этап 3 - Устранение отказа на месте</span>
+              </div>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-envelope bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                  <h3 class="timeline-header"><a href="#">Акт удовлетворения рекламации</a> </h3>
+
+                  <div class="timeline-body">
+                        Формирование акта удовлетворения рекламации
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">Запрос на пополнение ЗИП</a> </h3>
+                  <div class="timeline-body">
+                   Формирование запроса на пополнение ЗИП
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+
+              <div>
+                <i class="fas fa-clock bg-gray"></i>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (left) -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">3.2. Устранение отказа на предприятии</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+        <!-- Timelime example  -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- The time line -->
+            <div class="timeline">
+              <!-- timeline time label -->
+              <div class="time-label">
+                <span class="bg-red">3.2. Устранение отказа на предприятии</span>
+              </div>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-envelope bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                  <h3 class="timeline-header"><a href="#">Акт исследования</a></h3>
+
+                  <div class="timeline-body">
+                   Формирование акта исследования
+                  </div>
+                  <div class="timeline-footer">
+                     <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">Программа исследования</a> </h3>
+                  <div class="timeline-body">
+                    Формирование программы исследования
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">Заказ на приобретение элемента</a> </h3>
+                  <div class="timeline-body">
+                    Формирование заказа на приобретение элемента
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">СЗ на согласование сроков с в/ч</a> </h3>
+                  <div class="timeline-body">
+                    Формирование СЗ на согласование сроков с в/ч
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+                  <h3 class="timeline-header"><a href="#">Акт удовлетворения рекламации</a> </h3>
+                  <div class="timeline-body">
+                    Формирование акта удовлетворения рекламации
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-sm">Смотреть пример</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END timeline item -->
+
+
+              <div>
+                <i class="fas fa-clock bg-gray"></i>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (right) -->
+        </div>
+        <!-- /.row -->
+
+        <!-- END PROGRESS BARS -->
+
+
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <!-- jQuery -->
+  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/static/assets/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="/static/assets/js/demo.js"></script>
+
+{% endblock javascripts %}

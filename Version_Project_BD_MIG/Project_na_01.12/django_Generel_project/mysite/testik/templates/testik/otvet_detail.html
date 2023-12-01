@@ -1,0 +1,65 @@
+{% extends 'testik/base.html' %}
+{% load testik_tags %}
+{% block content %}
+
+
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+    {% block sidebar %}
+        {% include 'testik/includes/_breadcrumb.html' %}
+    {% endblock %}
+
+        <!-- Main content -->
+        <section class="content">
+
+
+            <div class="col-md-10">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Наименование</th>
+                        <th scope="col">Значение</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for name, value in otvet_one.get_fields %}
+                        {% if name in slovar %}
+                            <tr>
+                                <td>
+                                    {% field_name otvet_one name %}
+                                </td>
+                                <td>
+                                    {{ value |  nonefortext }}
+                                </td>
+                            </tr>
+                        {% endif %}
+                     {% if name in secslovar %}
+                            <tr>
+                                <td>
+                                    {% field_name otvet_one name %}
+                                </td>
+                                <td>
+                                    {{ value |  nonefortext }}
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+            <a href="{% url 'testik:Otvet' %}" class="btn btn-secondary float-right">
+                {% my_comeback %}</a>
+
+
+            </div>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock content %}
